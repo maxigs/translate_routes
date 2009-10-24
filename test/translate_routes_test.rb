@@ -117,7 +117,7 @@ class TranslateRoutesTest < ActionController::TestCase
     assert_routing '/people', :controller => 'people', :action => 'index', :locale => 'en'
   end
   
-  
+
   # Named routes with prefix on default locale:
   
   def test_named_empty_route_with_prefix
@@ -201,7 +201,7 @@ class TranslateRoutesTest < ActionController::TestCase
     assert_routing 'foo', :controller => 'people', :action => 'index', :locale => 'es'
     assert_helpers_include :people_en, :people_es, :people
   end
-  
+
   def test_named_translated_route_on_default_locale_without_prefix
     ActionController::Routing::Routes.draw { |map| map.people 'people', :controller => 'people', :action => 'index'}
     config_default_locale_settings('es', false)

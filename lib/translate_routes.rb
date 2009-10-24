@@ -27,7 +27,7 @@ module ActionController
         path = %w(locales routes.yml) if path.blank?
         file_path =  File.join(RAILS_ROOT, path)
         yaml = YAML.load_file(file_path)
-        yaml.each_pair{ |k,v| @@dictionaries[k.to_s] = v || {} }
+        yaml['routes'].each_pair{ |k,v| @@dictionaries[k.to_s] = v || {} }
         @using_i18n = false
         Translator.translate_current_routes
       end
@@ -131,7 +131,7 @@ module ActionController
           if @using_i18n
             tmp = I18n.locale
             I18n.locale = locale
-            value = I18n.t segment.value, :default => segment.value.dup
+            value = I18n.t "#{segment.value}", :default => segment.value.dup
             I18n.locale = tmp
           else
             value = @@dictionaries[locale][segment.value] || segment.value.dup
