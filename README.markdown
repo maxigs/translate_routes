@@ -26,9 +26,10 @@ Let's start with a tiny example. Of course you need to define your routes first,
 1) Download the plugin to your app's `/vendor/plugins` directory.
 
 2) Write your translations on a standard YAML file (e.g: i18n-routes.yml), including the locales and it translations pairs:
-
-    es:
-      contact: contacto
+    
+    routes:
+      es:
+        contact: contacto
 
 
 3) Append a line to your routes.rb file to activate the translations. If you loaded the translations file with
