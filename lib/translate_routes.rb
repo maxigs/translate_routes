@@ -27,7 +27,7 @@ module ActionController
         path = %w(locales routes.yml) if path.blank?
         file_path =  File.join(RAILS_ROOT, path)
         yaml = YAML.load_file(file_path)
-        yaml['routes'].each_pair{ |k,v| @@dictionaries[k.to_s] = v || {} }
+        yaml.each_pair{ |k,v| @@dictionaries[k.to_s] = (v|| {})['routes'] || {} }
         @using_i18n = false
         Translator.translate_current_routes
       end

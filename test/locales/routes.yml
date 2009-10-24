@@ -1,6 +1,6 @@
-routes:
-  es:
+es:
+  routes:
     people: gente
-  
-  en:
+
+en:
   

@@ -27,8 +27,8 @@ Let's start with a tiny example. Of course you need to define your routes first,
 
 2) Write your translations on a standard YAML file (e.g: i18n-routes.yml), including the locales and it translations pairs:
     
-    routes:
-      es:
+    es:
+      routes:
         contact: contacto
 
 
